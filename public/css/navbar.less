@@ -4,4 +4,18 @@ nav.navbar {
         background-color: @color-primary;
         border-color: @color-primary;
     }
+    
+    a {
+        color: #101010;
+    }
+    
+    .dropdown-menu {
+        >li {
+            >a {
+                &.inline {
+                    display: inline-block;
+                }
+            }
+        }
+    }
 }

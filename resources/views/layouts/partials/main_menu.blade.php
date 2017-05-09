@@ -35,7 +35,14 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{trans('menu.admin_actions')}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/">Action</a></li>
+            <li>
+                <a href="{{route('users.index')}}" class="inline">{{trans('menu.users')}}</a>
+                <span class="badge">
+                    <a href="{{route('users.create')}}">
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </a>
+                </span>
+            </li>
             <li><a href="/">Another action</a></li>
             <li><a href="/">Something else here</a></li>
             <li role="separator" class="divider"></li>

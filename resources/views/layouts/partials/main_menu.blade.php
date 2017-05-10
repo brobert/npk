@@ -38,7 +38,7 @@
             <li>
                 <a href="{{route('users.index')}}" class="inline">{{trans('menu.users')}}</a>
                 <span class="badge">
-                    <a href="{{route('users.create')}}">
+                    <a href="{{route('user.create')}}">
                         <span class="glyphicon glyphicon-plus-sign"></span>
                     </a>
                 </span>
@@ -68,11 +68,13 @@
                 </a>
 
                 <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{route('user.edit')}}">{{trans('menu.user_preferences')}}</a></li>
+                    <li role="separator" class="divider"></li>
                     <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
-                            Logout
+                            {{trans('menu.logout')}}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -81,8 +83,8 @@
                     </li>
                 </ul>
             </li>
-        @endif
       </ul>
     </div><!-- /.navbar-collapse -->
+    @endif
   </div><!-- /.container-fluid -->
 </nav>

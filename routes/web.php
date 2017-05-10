@@ -16,7 +16,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/messages', 'MessageController@index')->name('messages.index');
 Route::get('/payments', 'PaymentController@index')->name('payments.index');
 Route::get('/users', 'UsersController@index')->name('users.index');
-Route::get('/user', 'UsersController@index')->name('users.create');
+Route::get('/user', 'UsersController@index')->name('user.create');
+Route::get('/user_preferences', 'UsersController@edit')->name('user.edit');
 
 
 Auth::routes();

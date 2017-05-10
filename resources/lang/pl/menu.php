@@ -10,5 +10,11 @@ return [
     'admin_actions'=> 'Admin',
     'users' => 'Konta',
 
+    /**
+     * User Dropdown
+     */
+    'user_preferences' => 'Ustawienia',
+    'logout' => 'Wyloguj',
+
 
 ];

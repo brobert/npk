@@ -28,7 +28,7 @@
         <!--/ Application stylesheet -->
 
         <!-- Theme stylesheet -->
-		<link rel="stylesheet" href="../stylesheet/themes/theme.css">
+        <link rel="stylesheet" href="../stylesheet/themes/theme.css">
         <!--/ Theme stylesheet -->
 
         <!-- modernizr script -->
@@ -93,23 +93,13 @@
 
                 <!-- START Right nav -->
                 <ul class="nav navbar-nav navbar-right">
-                	<!-- Notification dropdown -->
-                	@include('layouts.partials.notification_dropdown')
+                    <!-- Notification dropdown -->
+                    @include('layouts.partials.notification_dropdown')
                     <!--/ Notification dropdown -->
 
                     <!-- Profile dropdown -->
-					@include('layouts.partials.profile_dropdown')
+                    @include('layouts.partials.profile_dropdown')
                     <!-- Profile dropdown -->
-					<!-- Offcanvas right This menu will take position at the top of template header (mobile only). Make sure that only #header have the `position: relative`, or it may cause unwanted behavior -->
-                    <li class="navbar-main">
-                        <a href="javascript:void(0);" data-toggle="sidebar" data-direction="rtl" rel="tooltip" title="Feed / contact sidebar">
-                            <span class="meta">
-                                <span class="icon"><i class="ico-users3"></i></span>
-                            </span>
-                        </a>
-                    </li>
-                    <!--/ Offcanvas right -->
-
                 </ul>
                 <!--/ END Right nav -->
             </div>
@@ -118,17 +108,17 @@
         <!--/ END Template Header -->
 
         <!-- START Template Sidebar (Left) -->
-			@include('layouts.partials.aside_left')
+            @include('layouts.partials.aside_left')
         <!--/ END Template Sidebar (Left) -->
 
-		<!-- START Template Sidebar (right) -->
-		@if(0)
-			@include('layouts.partials.aside_right')
-		@endif
+        <!-- START Template Sidebar (right) -->
+        @if(0)
+            @include('layouts.partials.aside_right')
+        @endif
         <!--/ END Template Sidebar (right) -->
 
        <!-- START Template Footer -->
-			@include('layouts.partials.footer')
+            @include('layouts.partials.footer')
         <!--/ END Template Footer -->
 
         <!-- START Template Main -->
@@ -157,8 +147,8 @@
                 <div id="app">
                     <!-- Main Menu -->
                     @if(0)
-                    	@include('layouts.partials.main_menu')
-                	@endif
+                        @include('layouts.partials.main_menu')
+                    @endif
                     <!-- /Main Menu -->
 
                     <!-- Main Content -->
@@ -184,7 +174,7 @@
         <!--/ Application and vendor script : mandatory -->
 
         <!-- Plugins and page level script : optional -->
-		<script type="text/javascript" src="../javascript/pace.min.js"></script>
+        <script type="text/javascript" src="../javascript/pace.min.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->
     </body>

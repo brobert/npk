@@ -24,6 +24,8 @@
         // On button submit click
         $form.on('click', 'button[type=submit]', function (e) {
             var $this = $(this);
+            
+            $('#error-container').empty();
 
             // Run parsley validation
             if ($form.parsley().validate()) {
@@ -40,21 +42,26 @@
                     url: $form.attr('action'),
                     data: $form.serialize(),
                     success: function(a,s,d) {
-                    	console.info('SUCCESS', a,s,d);
+                        $this.prop('disabled', false);
                         location.href = '/';
                     },
-                    error: (a,s,d) => {
-                    	console.info('ERROR', a,s,d);
+                    error: (xhr,status,message) => {
+                        console.info('ERROR::xhr', xhr);
+                        console.info('ERROR::status', status);
+                        console.info('ERROR::message', message);
+                        $this.prop('disabled', false);
+                        
+                        const responseJSON = xhr.responseJSON || {};
+                        
+                        Object.keys(responseJSON).forEach(
+                            (key) => {
+                                console.info('LOGIN::ERROR::key: ', key, responseJSON[key]);
+                                $('#error-container').append($('<span/>', {class: 'text-danger', text: responseJSON[key] }));
+                            }
+                        );
                     }
                     //dataType: dataType
                 })
-//                setTimeout(function () {
-//                    // done nprogress bar
-//                    //NProgress.done();
-//
-//                    // redirect user
-//                    
-//                }, 500);
             } else {
                 // toggle animation
                 $form

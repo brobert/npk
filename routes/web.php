@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::prefix('admin')->group(function () {
+    Route::get('users', 'UsersController@index')->name('admin.users');
+});
+
 Route::get('/messages', 'MessageController@index')->name('messages.index');
 Route::get('/payments', 'PaymentController@index')->name('payments.index');
 Route::get('/users', 'UsersController@index')->name('users.index');
@@ -21,3 +25,5 @@ Route::get('/user_preferences', 'UsersController@edit')->name('user.edit');
 
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+

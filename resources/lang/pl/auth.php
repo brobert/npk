@@ -13,19 +13,19 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'Błędny email/login lub hasło',
+    'throttle' => 'Przekroczono limit nieudanych logowań. Spróbuj ponownie za :seconds sekund.',
 
     'form' => [
-        'title' => 'Login.',
+        'title' => 'Logowanie',
         'fields' => [
             'email' => 'e-mail',
-            'password' => 'Password',
-            'remember' => 'Remember Me',
+            'password' => 'Hasło',
+            'remember' => 'Zapamietaj mnie',
         ],
-        'login' => 'Login',
-        'logout' => 'Logout',
-        'forgot_pass' => 'Forgot my password'
+        'login' => 'Zaloguj',
+        'logout' => 'Wyloguj',
+        'forgot_pass' => 'Nie pamiętam hasła'
     ],
 
 

@@ -10,6 +10,8 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
+        "php-imap/php-imap": "~2.0",
+        "pulkitjalan/google-apiclient": "^3.1",
         "yajra/laravel-acl": "^3.0"
     },
     "require-dev": {

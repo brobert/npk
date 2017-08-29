@@ -14,7 +14,7 @@
                             </div>
                             <div class="dropdown-body slimscroll">
 
-								<!-- Message list -->
+                                <!-- Message list -->
                                 <div class="media-list">
                                     <a href="javascript:void(0);" class="media read border-dotted">
                                         <span class="media-object pull-left">
@@ -28,7 +28,7 @@
                                         </span>
                                     </a>
 
-									<a href="page-message-rich.html" class="media border-dotted read">
+                                    <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="../image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
                                         </span>
@@ -67,7 +67,7 @@
                                         </span>
                                     </a>
 
-									<a href="page-message-rich.html" class="media border-dotted read">
+                                    <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="../image/avatar/avatar9.jpg" class="media-object img-circle" alt="">
                                         </span>
@@ -93,7 +93,7 @@
                                         </span>
                                     </a>
 
-									<a href="page-message-rich.html" class="media border-dotted read">
+                                    <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="../image/avatar/avatar5.jpg" class="media-object img-circle" alt="">
                                         </span>
@@ -106,7 +106,7 @@
                                         </span>
                                     </a>
 
-									<a href="page-message-rich.html" class="media border-dotted ">
+                                    <a href="page-message-rich.html" class="media border-dotted ">
                                         <span class="pull-left">
                                             <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
                                         </span>

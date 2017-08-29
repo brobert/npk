@@ -28,4 +28,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getFullName() {
+        return sprintf("%s %s", $this->name, $this->surname );
+    }
 }

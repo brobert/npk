@@ -5,7 +5,7 @@
         <!-- START META SECTION -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lander.v2 - Bootstrap WebApp & Dashboard</title>
+        <title> {{ config('app.name') }} - @yield('page_title')</title>
         <meta name="author" content="optimisticdesigns">
         <meta name="description" content="Lander.v2 Admin is a clean and flat backend built with twitter bootstrap">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -28,7 +28,7 @@
         <!--/ Application stylesheet -->
 
         <!-- Theme stylesheet -->
-		<link rel="stylesheet" href="/stylesheet/themes/theme.css">
+        <link rel="stylesheet" href="/stylesheet/themes/theme.css">
         <!--/ Theme stylesheet -->
 
         <!-- modernizr script -->
@@ -56,7 +56,7 @@
 
         <!-- Plugins and page level script : optional -->
         <script type="text/javascript" src="/javascript/pace.min.js"></script>
-		<script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
+        <script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
         <script type="text/javascript" src="/javascript/backend/pages/login.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->

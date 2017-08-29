@@ -12,9 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
-    Route::get('users', 'UsersController@index')->name('admin.users');
+    Route::get('users', 'Admin\UsersController@index')->name('admin.users');
 });
 
 Route::get('/messages', 'MessageController@index')->name('messages.index');

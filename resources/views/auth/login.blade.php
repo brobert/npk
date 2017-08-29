@@ -1,5 +1,9 @@
 @extends('layouts.blank')
 
+@section('title')
+Logowanie
+@endsection
+
 @section('content')
 
 <div class="row">
@@ -44,7 +48,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                    	@if(0)
+                        @if(0)
                         <div class="col-xs-6">
                             <div class="checkbox custom-checkbox">
                                 <input type="checkbox" name="remember" id="remember" value="1">

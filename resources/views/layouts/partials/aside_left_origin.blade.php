@@ -1,7 +1,7 @@
 <aside class="sidebar sidebar-left sidebar-menu">
-	<!-- START Sidebar Content -->
+    <!-- START Sidebar Content -->
     <section class="content slimscroll">
-		<!-- START Template Navigation/Menu -->
+        <!-- START Template Navigation/Menu -->
         <ul class="topmenu topmenu-responsive" data-toggle="menu">
             <li>
                 <a href="/" data-target="#dashboard" data-parent=".topmenu">
@@ -9,7 +9,7 @@
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-			<li class="active open" >
+            <li class="active open" >
                 <a href="javascript:void(0);" data-toggle="submenu" data-target="#layout" data-parent=".topmenu">
                     <span class="figure"><i class="ico-grid"></i></span>
                     <span class="text">Layouts</span>
@@ -53,11 +53,11 @@
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
-			<li>
+            <li>
                 <a href="widget.html" data-parent=".topmenu">
                     <span class="figure"><i class="ico-tasks"></i></span>
                     <span class="text">Stats & Widgets</span>
-					<span class="number"><span class="label label-danger">6</span></span>
+                    <span class="number"><span class="label label-danger">6</span></span>
                 </a>
             </li>
             <li >
@@ -74,7 +74,7 @@
                             <span class="text">Animation</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-button.html">
                             <span class="text">Button</span>
                             <span class="number"><span class="label label-info">U</span></span>
@@ -85,22 +85,22 @@
                             <span class="text">Carousel</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-grid.html">
                             <span class="text">Grid</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-icon.html">
                             <span class="text">Icon</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-loading.html">
                             <span class="text">Loading indicator</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-notification.html">
                             <span class="text">Notification</span>
                         </a>
@@ -115,12 +115,12 @@
                             <span class="text">Pricing table / box</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-slider.html">
                             <span class="text">Slider</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="component-sortable.html">
                             <span class="text">Sortable</span>
                             <span class="number"><span class="label label-success">N</span></span>
@@ -235,7 +235,7 @@
                             <span class="text">Blank </span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="javascript:void(0);" data-toggle="submenu" data-target="#blog" data-parent="#page">
                             <span class="text">Blog page</span>
                             <span class="arrow"></span>
@@ -254,7 +254,7 @@
                         </ul>
                         <!--/ END 2nd Level Menu -->
                     </li>
-					<li >
+                    <li >
                         <a href="page-calendar.html">
                             <span class="text">Calendar</span>
                         </a>
@@ -294,17 +294,17 @@
                         </ul>
                         <!--/ END 2nd Level Menu -->
                     </li>
-					<li >
+                    <li >
                         <a href="page-faq.html">
                             <span class="text">FAQ</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="page-invoice.html">
                             <span class="text">Invoice</span>
                         </a>
                     </li>
-					<li >
+                    <li >
                         <a href="page-profile.html">
                             <span class="text">Profile</span>
                         </a>
@@ -369,7 +369,7 @@
                 <a href="chart-flot.html">
                     <span class="figure"><i class="ico-stats-up"></i></span>
                     <span class="text">Charts</span>
-					<span class="number"><span class="label label-success">11</span></span>
+                    <span class="number"><span class="label label-success">11</span></span>
                 </a>
             </li>
             <li >
@@ -397,7 +397,7 @@
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
-			<li >
+            <li >
                 <a href="javascript:void(0);" data-toggle="submenu" data-target="#submenu1" data-parent=".topmenu">
                     <span class="figure">
                         <i class="ico-sitemap"></i>
@@ -411,32 +411,32 @@
                     <li >
                         <a href="javascript:void(0);" data-toggle="submenu" data-target="#submenu2" data-parent="#submenu">
                             <span class="text">Menu Level 1.1</span>
-							<span class="arrow"></span>
+                            <span class="arrow"></span>
                         </a>
-						<ul id="submenu2" class="submenu collapse ">
-							<li class="submenu-header ellipsis">Menu Levels 1.1</li>
-							<li >
-								<a href="javascript:void(0);" data-toggle="submenu" data-target="#submenu3" data-parent="#submenu2">
-									<span class="text">Menu Level 2.1</span>
-									<span class="arrow"></span>
-								</a>
-								<ul id="submenu3" class="submenu collapse ">
-									<li class="submenu-header ellipsis">Menu Levels 2.1</li>
-									<li >
-										<a href="#">
-											<span class="text">Menu Level 3.1</span>
-										</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+                        <ul id="submenu2" class="submenu collapse ">
+                            <li class="submenu-header ellipsis">Menu Levels 1.1</li>
+                            <li >
+                                <a href="javascript:void(0);" data-toggle="submenu" data-target="#submenu3" data-parent="#submenu2">
+                                    <span class="text">Menu Level 2.1</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul id="submenu3" class="submenu collapse ">
+                                    <li class="submenu-header ellipsis">Menu Levels 2.1</li>
+                                    <li >
+                                        <a href="#">
+                                            <span class="text">Menu Level 3.1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
-		</ul>
+        </ul>
         <!--/ END Template Navigation/Menu -->
-		<!-- START Sidebar summary -->
+        <!-- START Sidebar summary -->
         <!-- Summary -->
         <h5 class="heading">Summary</h5>
         <div class="wrapper">

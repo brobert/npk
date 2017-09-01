@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->smallInteger('hidden')->default(0);
             $table->string('password');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
 
             // indexes

@@ -23,7 +23,27 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $widgets = [
+            [
+                'path' => 'payments',
+                'data'=> [
+                    'cost' => 123,
+                ],
+            ],
+            [
+                'path' => 'messages',
+                'data'=> [
+                ],
+            ],
+            [
+                'path' => 'presences',
+                'data' => [],
+            ]
+        ];
+
         $this->set_view('home');
+        $this->set_data('widgets', $widgets);
+
         return $this->render_view();
     }
 }

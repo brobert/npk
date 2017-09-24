@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Message;
+
 class MessageController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct(Message $messages) {
         $this->middleware('auth');
+        $this->model = $messages;
     }
 
     /**
@@ -20,6 +23,10 @@ class MessageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('messages.index');
+        $this->set_data('messages', $this->model->with('sender', 'recipents')->get());
+
+        $this->set_view('messages.index');
+
+        return $this->render_view();
     }
 }

@@ -9,6 +9,7 @@
                     <span class="text">{{trans('menu.home.title')}}</span>
                 </a>
             </li>
+            @if( auth()->user()->hasRole('administrator') )
             <li class="" >
                 <a href="javascript:void(0);" data-toggle="submenu" data-target="#admin" data-parent=".topmenu">
                     <span class="figure"><i class="ico-lock3"></i></span>
@@ -26,6 +27,7 @@
                 </ul>
                 <!--/ END 2nd Level Menu -->
             </li>
+            @endif
         </ul>
         <!--/ END Template Navigation/Menu -->
     </section>

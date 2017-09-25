@@ -13,14 +13,43 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('subject');
-            $table->string('message');
-            $table->integer('senderid', null, true);
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        Schema::create(
+            'messages',
+            function (Blueprint $table) {
+                // define columns
+                $table->increments('id');
+                $table->string('subject', 255);
+                $table->text('message');
+                $table->integer('sender_id', null, true);
+                $table->softDeletes();
+                $table->timestamps();
+
+                // define indexes and foreign keys
+                $table->index('sender_id');
+                $table->foreign('sender_id')->references('id')->on('users');
+            }
+        );
+
+
+        Schema::create(
+            'message_user',
+            function(Blueprint $table)
+            {
+                // define columns
+                $table->integer('message_id', null, true);  // autoincrement=null, unsigned=true
+                $table->integer('user_id', null, true);     // autoincrement=null, unsigned=true
+                $table->boolean('is_readed');
+                $table->timestamps();
+
+                // define indexes and foreign keys
+                $table->index('message_id');
+                $table->index('user_id');
+                $table->unique(['message_id', 'user_id']);
+
+                $table->foreign('message_id')->references('id')->on('messages');
+                $table->foreign('user_id')->references('id')->on('users');
+            }
+        );
     }
 
     /**
@@ -30,6 +59,7 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('message_user');
         Schema::dropIfExists('messages');
     }
 }

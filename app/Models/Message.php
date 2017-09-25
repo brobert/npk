@@ -8,16 +8,16 @@ class Message extends Model
 {
     //
     protected $fillable = [
-            'subject', 'message', 'senderid',
+            'subject', 'message', 'sender_id',
     ];
 
     public function sender()
     {
-        return $this->hasOne('App\Models\User', 'id', 'senderid');
+        return $this->hasOne('App\Models\User', 'id', 'sender_id');
     }
 
     public function recipents()
     {
-        return $this->belongsToMany('App\Models\User')->withPivot('read');
+        return $this->belongsToMany('App\Models\User')->withPivot('is_readed');
     }
 }

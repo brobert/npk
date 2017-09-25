@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\Message;
+use App\Resources\MessageResource;
 
 class MessageController extends Controller {
     /**
@@ -12,9 +11,10 @@ class MessageController extends Controller {
      *
      * @return void
      */
-    public function __construct(Message $messages) {
+    public function __construct(MessageResource $message_resource) {
         $this->middleware('auth');
-        $this->model = $messages;
+        $this->resource = $message_resource;
+        $this->set_view('messages.index');
     }
 
     /**
@@ -22,10 +22,20 @@ class MessageController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $this->set_data('messages', $this->model->with('sender', 'recipents')->get());
+    public function index(Request $request) {
 
-        $this->set_view('messages.index');
+        $messages = $this->resource->get_incoming_messages($request);
+
+        $this->set_data('messages', $messages);
+
+        return $this->render_view();
+    }
+
+    public function outbox(Request $request)
+    {
+        $messages = $this->resource->get_outgoing_messages();
+
+        $this->set_data('messages', $messages);
 
         return $this->render_view();
     }

@@ -1,38 +1,27 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit\Api;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 use App\Models\User;
 
-class ExampleTest extends TestCase
+class UserTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testExample()
     {
         $user = factory(User::class)->create();
 
         $response = $this->actingAs($user)
-        ->get('/');
+        ->get('/api/user');
 
 
         $response->assertStatus(200, '---------------');
-
-//         $response
-//         ->assertStatus(200, 'Wrong response status')
-//         ->assertJson(
-//             [
-//                 'created' => true,
-//             ],
-//             'Wrong JSON response'
-//         );
     }
 }

@@ -24,3 +24,14 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Message::class, function (Faker\Generator $faker) {
+
+    return [
+        'subject' => $faker->sentence(6, true),
+        'message' => $faker->text(500),
+        'sender_id' => $faker->numberBetween(1,50),
+    ];
+});

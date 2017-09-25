@@ -22,7 +22,16 @@ Route::prefix('admin')
     }
 );
 
-Route::get('/messages', 'MessageController@index')->name('messages.index');
+Route::prefix('messages')
+->middleware('auth')
+->group(
+    function ( ) {
+        Route::get('/', 'MessageController@index')->name('messages.inbox');
+        Route::get('/outbox', 'MessageController@outbox')->name('messages.outbox');
+    }
+);
+
+
 Route::get('/payments', 'PaymentController@index')->name('payments.index');
 Route::get('/users', 'UsersController@index')->name('users.index');
 Route::get('/user', 'UsersController@index')->name('user.create');

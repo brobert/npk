@@ -15,3 +15,4 @@ npm-debug.log
 /.buildpath
 /.settings/org.eclipse.php.core.prefs
 /.settings/org.eclipse.wst.common.project.facet.core.xml
+.settings

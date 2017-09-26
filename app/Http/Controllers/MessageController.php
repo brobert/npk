@@ -39,4 +39,18 @@ class MessageController extends Controller {
 
         return $this->render_view();
     }
+
+    public function draft(Request $request)
+    {
+        $messages = $this->resource->get_draft_messages();
+
+        $this->set_data('messages', $messages);
+
+        return $this->render_view();
+    }
+
+    public function view(Request $request, $messageid)
+    {
+        return [$messageid];
+    }
 }

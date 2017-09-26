@@ -19,8 +19,9 @@ class CreateMessagesTable extends Migration
                 // define columns
                 $table->increments('id');
                 $table->string('subject', 255);
-                $table->text('message');
+                $table->text('body');
                 $table->integer('sender_id', null, true);
+                $table->enum('status', ['draft', 'ready',])->default('draft');
                 $table->softDeletes();
                 $table->timestamps();
 

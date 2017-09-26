@@ -26,7 +26,7 @@
             <div class="list-group">
                 <a href="{{route('messages.inbox')}}" class="list-group-item"><i class="ico-drawer mr5"></i> Inbox <span class="semibold text-muted pull-right">1943</span></a>
                 <a href="{{route('messages.outbox')}}" class="list-group-item"><i class="ico-paper-plane mr5"></i> Sent <span class="semibold text-muted pull-right">51</span></a>
-                <a href="" class="list-group-item"><i class="ico-pen3 mr5"></i> Draft <span class="semibold text-muted pull-right">11</span></a>
+                <a href="{{route('messages.draft')}}" class="list-group-item"><i class="ico-pen3 mr5"></i> Draft <span class="semibold text-muted pull-right">11</span></a>
                 <a href="" class="list-group-item"><i class="ico-remove2 mr5"></i> Trash</a>
             </div>
             <!--/ Browse -->
@@ -77,7 +77,7 @@
                             <h5 class="heading">
                                 <i class="ico-square text-danger mr5"></i>
                                 <i class="ico-attachment text-muted mr5"></i>
-                                <a href="page-email-view.html">{{$message->subject}}</a>
+                                <a href="{{route('messages.view', [$message->id])}}">{{$message->subject}}</a>
                             </h5>
                             <p class="text">{{ strip_tags(str_limit($message->message, 100, '...'))}}</p>
                         </td>

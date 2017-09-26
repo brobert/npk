@@ -31,7 +31,8 @@ $factory->define(App\Models\Message::class, function (Faker\Generator $faker) {
 
     return [
         'subject' => $faker->sentence(6, true),
-        'message' => $faker->text(500),
+        'body' => $faker->text(500),
+        'status' => $faker->randomElement(['draft', 'ready']),
         'sender_id' => $faker->numberBetween(1,50),
     ];
 });

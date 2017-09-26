@@ -28,6 +28,8 @@ Route::prefix('messages')
     function ( ) {
         Route::get('/', 'MessageController@index')->name('messages.inbox');
         Route::get('/outbox', 'MessageController@outbox')->name('messages.outbox');
+        Route::get('/draft', 'MessageController@draft')->name('messages.draft');
+        Route::get('/view/{id}', 'MessageController@view')->name('messages.view');
     }
 );
 

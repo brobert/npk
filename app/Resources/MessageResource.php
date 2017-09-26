@@ -19,16 +19,33 @@ class MessageResource extends BasicResource {
 
     public function get_incoming_messages()
     {
-        return $this->model->with('sender', 'recipents')->whereHas('recipents', function ($query) {
-            $query->where('user_id', Auth::user()->id);
-        })
-        ->orderBy('created_at', 'desc')
+        return $this->model
+            ->with('sender', 'recipents')
+            ->where('status', 'ready')
+            ->whereHas(
+                'recipents',
+                function ($query)
+                {
+                    $query->where('user_id', Auth::user()->id);
+                }
+            )
+            ->orderBy('created_at', 'desc')
         ->paginate();
     }
 
     public function get_outgoing_messages()
     {
         return $this->model->with('sender', 'recipents')
+        ->where('status', 'ready')
+        ->where('sender_id', Auth::user()->id)
+        ->orderBy('created_at', 'desc')
+        ->paginate();
+    }
+
+    public function get_draft_messages()
+    {
+        return $this->model->with('sender', 'recipents')
+        ->where('status', 'draft')
         ->where('sender_id', Auth::user()->id)
         ->orderBy('created_at', 'desc')
         ->paginate();

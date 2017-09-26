@@ -32,7 +32,7 @@ $factory->define(App\Models\Message::class, function (Faker\Generator $faker) {
     return [
         'subject' => $faker->sentence(6, true),
         'body' => $faker->text(500),
-        'status' => $faker->randomElement(['draft', 'ready']),
+        'status' => $faker->randomElement(['draft', 'sended']),
         'sender_id' => $faker->numberBetween(1,50),
     ];
 });

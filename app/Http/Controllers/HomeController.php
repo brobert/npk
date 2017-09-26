@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Resources\MessageResource;
 
 class HomeController extends Controller
 {
@@ -11,9 +12,14 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        MessageResource $messageRes
+    )
     {
         $this->middleware('auth');
+        $this->resources = [
+            'message' => $messageRes,
+        ];
     }
 
     /**
@@ -21,7 +27,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $widgets = [
             [
@@ -32,11 +38,14 @@ class HomeController extends Controller
             ],
             [
                 'path' => 'messages',
-                'data'=> [
-                ],
+                'data' => $this->resources['message']->get_incoming_messages($request, 5),
             ],
             [
                 'path' => 'presences',
+                'data' => [],
+            ],
+            [
+                'path' => 'custom',
                 'data' => [],
             ]
         ];

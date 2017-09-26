@@ -21,7 +21,9 @@ class CreateMessagesTable extends Migration
                 $table->string('subject', 255);
                 $table->text('body');
                 $table->integer('sender_id', null, true);
-                $table->enum('status', ['draft', 'ready',])->default('draft');
+                $table->enum('status', ['draft', 'sended'])->default('draft');
+
+                // system columns
                 $table->softDeletes();
                 $table->timestamps();
 
@@ -39,7 +41,10 @@ class CreateMessagesTable extends Migration
                 // define columns
                 $table->integer('message_id', null, true);  // autoincrement=null, unsigned=true
                 $table->integer('user_id', null, true);     // autoincrement=null, unsigned=true
-                $table->boolean('is_readed');
+                $table->enum('status', ['new','readed','spam']);
+
+                // system columns
+                $table->softDeletes();
                 $table->timestamps();
 
                 // define indexes and foreign keys

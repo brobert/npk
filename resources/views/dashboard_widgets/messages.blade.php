@@ -1,54 +1,48 @@
 <div class="col-md-6">
-    <div class="panel panel-info">
-        <div class="panel-heading">Wiadomości</div>
-
-        <div class="panel-body">
-                                <!-- Message list -->
-                                <div class="media-list">
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="media-body">
-                                            <span class="media-heading">Martina Poole</span>
-                                            <span class="media-text ellipsis nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-reply"></i></span>
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">20m</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="media-body">
-                                            <span class="media-heading">Tamara Moon</span>
-                                            <span class="media-text ellipsis nm">Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">2w</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted read">
-                                        <span class="media-body">
-                                            <span class="media-heading">Noelani Blevins</span>
-                                            <span class="media-text ellipsis nm">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta pull-right">2d</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-
-                                    <a href="page-message-rich.html" class="media border-dotted ">
-                                        <span class="media-body">
-                                            <span class="media-heading">Walter Foster</span>
-                                            <span class="media-text ellipsis nm">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                                            <!-- meta icon -->
-                                            <span class="media-meta"><i class="ico-attachment"></i></span>
-                                            <span class="media-meta pull-right">21h</span>
-                                            <!--/ meta icon -->
-                                        </span>
-                                    </a>
-                                </div>
-                                <!--/ Message list -->
+    <!-- START panel -->
+    <div class="panel panel-primary">
+        <!-- panel heading/header -->
+        <div class="panel-heading">
+            <h3 class="panel-title"><a href="{{route('messages.inbox')}}">@lang('messages.title')</a></h3>
+            <!-- panel toolbar -->
+            <div class="panel-toolbar text-right">
+                <!-- option -->
+<!--                 <div class="option"> -->
+<!--                     <button class="btn demo" data-toggle="panelrefresh"><i class="reload"></i></button> -->
+<!--                     <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button> -->
+<!--                     <button class="btn" data-toggle="panelremove" data-parent=".col-md-4"><i class="remove"></i></button> -->
+<!--                 </div> -->
+                <!--/ option -->
+            </div>
+            <!--/ panel toolbar -->
         </div>
+        <!--/ panel heading/header -->
+
+        <!-- panel body with collapse capable -->
+        <div class="panel-collapse pull out">
+            <div class="panel-body">
+                <div class="media-list">
+                    @foreach( $data as $message )
+                    <a href="{{route('messages.view', [$message->id])}}" class="media border-dotted ">
+                        <span class="media-body">
+                            <span class="media-heading">{{ $message->sender->getFullName()}}</span>
+                            <span class="media-text ellipsis nm">{{ $message->subject}}</span>
+                            <!-- meta icon -->
+                            <span class="media-meta pull-right">{{ $message->created_at->diffForHumans() }}</span>
+                            <!--/ meta icon -->
+                        </span>
+                    </a>
+                    @endforeach
+                </div>
+                <pre>{{ print_r($data, 1) }}</pre>
+            <!--/ Message list -->
+            </div>
+        </div>
+        <!--/ panel body with collapse capabale -->
+
+        <!-- Loading indicator -->
+        <div class="indicator"><span class="spinner"></span></div>
+        <!--/ Loading indicator -->
     </div>
+    <!--/ END panel -->
 </div>

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::prefix('admin')
 ->middleware('auth')
@@ -29,7 +29,8 @@ Route::prefix('messages')
         Route::get('/', 'MessageController@index')->name('messages.inbox');
         Route::get('/outbox', 'MessageController@outbox')->name('messages.outbox');
         Route::get('/draft', 'MessageController@draft')->name('messages.draft');
-        Route::get('/view/{id}', 'MessageController@view')->name('messages.view');
+        Route::get('/trash', 'MessageController@deleted')->name('messages.deleted');
+        Route::get('/view/{id}', 'MessageController@show_message')->name('messages.view');
     }
 );
 

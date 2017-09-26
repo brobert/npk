@@ -85,27 +85,7 @@
 
             <hr><!-- horizontal line -->
 
-            <!-- Advertisements -->
-            <h5 class="semibold">Dummie Advert</h5>
-            <ul class="list-table mb15">
-                <li class="text-left valign-top">
-                    <div class="thumbnail nm">
-                        <!-- media -->
-                        <div class="media">
-                            <!-- indicator -->
-                            <div class="indicator"><span class="spinner"></span></div>
-                            <!-- indicator -->
-                            <img data-toggle="unveil" src="/image/background/400x250/placeholder.jpg" data-src="/image/background/400x250/adv.jpg" alt="Advertisements" width="100%">
-                        </div>
-                        <!--/ media -->
-                    </div>
-                </li>
-                <li class="text-left valign-top">
-                    <a class="semibold" href="javascript:void(0);">Bootstrap3</a>
-                    <p class="text-muted nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </li>
-            </ul>
-            <!--/ Advertisements -->
+
         </div>
         <!--/ panel body -->
     </div>
@@ -154,9 +134,7 @@
 
         <!-- panel body -->
         <div class="panel-body bgcolor-default">
-            <h3 class="semibold mt0 mb5">Click me. I'll take you to the email view</h3>
-            <p class="nm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3 class="semibold mt0 mb5">{{$message->subject}} {{$message->id}}</h3>
         </div>
         <!--/ panel body -->
 
@@ -171,8 +149,8 @@
                 </li>
                 <li class="text-left">
                     <h4 class="semibold ellipsis nm">
-                        Colt Jenkins /
-                        <small class="text-muted"><a href="javascript:void(0);">cj@mail.com</a> to <a href="javascript:void(0);">Me</a></small>
+                        {{$message->sender->getFullName()}} /
+                        <small class="text-muted"><a href="javascript:void(0);">{{$message->sender->email}}</a> to <a href="javascript:void(0);">Me</a></small>
                     </h4>
                 </li>
                 <li class="text-right">
@@ -185,67 +163,7 @@
 
         <!-- panel body -->
         <div class="panel-body slimscroll" style="height:450px;">
-            <h5 class="semibold">Dear Mr. John Doe,</h5>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <blockquote class="mt15 mb15">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-            <p>Check this awesome photo :)</p>
-            <div class="row mt15 mb15" id="photo-album">
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background1.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background1.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background2.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background2.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background3.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background3.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background4.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background4.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background5.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background5.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <!-- thumbnail -->
-                    <a href="/image/background/background6.jpg" class="thumbnail magnific">
-                        <img src="/image/background/400x400/background6.jpg" alt="" width="100%" />
-                    </a>
-                    <!--/ thumbnail -->
-                </div>
-            </div>
+            {{$message->body}}
 
             <address>
                 <p class="semibold nm">Best Regard,</p>
@@ -296,6 +214,7 @@
             <i>Click here to <strong>Reply</strong> or <strong>Forward</strong></i>
         </div>
         <!--/ reply box -->
+        <pre>{{ print_r($message, 1)}}</pre>
     </div>
     <!--/ content -->
 </div>

@@ -30,7 +30,7 @@
 
                                     <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
-                                            <img src="../image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
+                                            <img src="/image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
                                         </span>
                                         <span class="media-body">
                                             <span class="media-heading">Martina Poole</span>
@@ -69,7 +69,7 @@
 
                                     <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
-                                            <img src="../image/avatar/avatar9.jpg" class="media-object img-circle" alt="">
+                                            <img src="/image/avatar/avatar9.jpg" class="media-object img-circle" alt="">
                                         </span>
                                         <span class="media-body">
                                             <span class="media-heading">Tamara Moon</span>
@@ -95,7 +95,7 @@
 
                                     <a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
-                                            <img src="../image/avatar/avatar5.jpg" class="media-object img-circle" alt="">
+                                            <img src="/image/avatar/avatar5.jpg" class="media-object img-circle" alt="">
                                         </span>
                                         <span class="media-body">
                                             <span class="media-heading">Noelani Blevins</span>
@@ -108,7 +108,7 @@
 
                                     <a href="page-message-rich.html" class="media border-dotted ">
                                         <span class="pull-left">
-                                            <img src="../image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
+                                            <img src="/image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
                                         </span>
                                         <span class="media-body">
                                             <span class="media-heading">Walter Foster</span>

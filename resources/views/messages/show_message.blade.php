@@ -5,89 +5,7 @@
 <div class="table-layout">
     <!-- message list-->
     <div class="col-lg-3 valign-top panel panel-minimal">
-        <!-- panel heading -->
-        <div class="panel-heading">
-            <!-- panel toolbar -->
-            <div class="panel-toolbar">
-                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#ModalComposeMessage">
-                    <i class="ico-pencil5"></i>
-                    <span class="semibold">Compose Email</span>
-                </button>
-            </div>
-        </div>
-        <!--/ panel heading -->
-
-        <!-- panel body -->
-        <div class="panel-body">
-            <!-- Browse -->
-            <h5 class="semibold">Browse</h5>
-            <div class="list-group">
-                <a href="page-email-inbox.html" class="list-group-item"><i class="ico-drawer mr5"></i> Inbox <span class="semibold text-muted pull-right">1943</span></a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-paper-plane mr5"></i> Sent <span class="semibold text-muted pull-right">51</span></a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-pen3 mr5"></i> Draft <span class="semibold text-muted pull-right">11</span></a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-remove2 mr5"></i> Trash</a>
-            </div>
-            <!--/ Browse -->
-            <!-- Label -->
-            <h5 class="semibold">Label</h5>
-            <div class="list-group">
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-square text-danger mr5"></i> Work</a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-square text-muted mr5"></i> Design</a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-square text-teal mr5"></i> Social</a>
-                <a href="javascript:void(0);" class="list-group-item"><i class="ico-square text-success mr5"></i> Magazine</a>
-            </div>
-            <!--/ Label-->
-            <!-- Progress bar -->
-            <h5 class="semibold">Space Used</h5>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <ul class="list-table nm">
-                        <li class="text-left">Inbox</li>
-                        <li>
-                            <div class="progress progress-xs nm">
-                                <div class="progress-bar" style="width: 40%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="list-group-item">
-                    <ul class="list-table nm">
-                        <li class="text-left">Sent</li>
-                        <li>
-                            <div class="progress progress-xs nm">
-                                <div class="progress-bar" style="width: 15%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="list-group-item">
-                    <ul class="list-table nm">
-                        <li class="text-left">Draft</li>
-                        <li>
-                            <div class="progress progress-xs nm">
-                                <div class="progress-bar" style="width: 20%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="list-group-item">
-                    <ul class="list-table nm">
-                        <li class="text-left">Trash</li>
-                        <li>
-                            <div class="progress progress-xs nm">
-                                <div class="progress-bar progress-bar-danger" style="width: 90%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/ Progress bar -->
-
-            <hr><!-- horizontal line -->
-
-
-        </div>
-        <!--/ panel body -->
+    @include('messages.navigation_panel')
     </div>
     <!--/ message list -->
 
@@ -154,7 +72,7 @@
                     </h4>
                 </li>
                 <li class="text-right">
-                    <h5 class="semibold text-muted">Jul 19, 2013</h5>
+                    <h5 class="semibold text-muted">{{$message->created_at->toDateTimeString()}}</h5>
                 </li>
             </ul>
             <!--/ sender detail -->
@@ -162,7 +80,7 @@
         <!--/ panel body -->
 
         <!-- panel body -->
-        <div class="panel-body slimscroll" style="height:450px;">
+        <div class="panel-body slimscroll" style="max-height:450px;">
             {{$message->body}}
 
             <address>
@@ -174,39 +92,39 @@
         <!--/ panel body -->
 
         <!-- panel body -->
-        <div class="panel-body">
-            <h5 class="semibold mt0">Attachment</h5>
+<!--         <div class="panel-body"> -->
+<!--             <h5 class="semibold mt0">Attachment</h5> -->
 
             <!-- attachment -->
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped nm">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span class="label label-success">HTML</span> file.html (1.2 MB)
-                            </td>
-                            <td width="6%"><a href="javascript:void(0);">View</a></td>
-                            <td width="6%"><a href="javascript:void(0);">Download</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="label label-primary">CSS</span> file.css (1.2 MB)
-                            </td>
-                            <td width="6%"><a href="javascript:void(0);">View</a></td>
-                            <td width="6%"><a href="javascript:void(0);">Download</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="label label-danger">PHP</span> file.php (1.2 MB)
-                            </td>
-                            <td width="6%"><a href="javascript:void(0);">View</a></td>
-                            <td width="6%"><a href="javascript:void(0);">Download</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<!--             <div class="table-responsive"> -->
+<!--                 <table class="table table-bordered table-striped nm"> -->
+<!--                     <tbody> -->
+<!--                         <tr> -->
+<!--                             <td> -->
+<!--                                 <span class="label label-success">HTML</span> file.html (1.2 MB) -->
+<!--                             </td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">View</a></td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">Download</a></td> -->
+<!--                         </tr> -->
+<!--                         <tr> -->
+<!--                             <td> -->
+<!--                                 <span class="label label-primary">CSS</span> file.css (1.2 MB) -->
+<!--                             </td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">View</a></td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">Download</a></td> -->
+<!--                         </tr> -->
+<!--                         <tr> -->
+<!--                             <td> -->
+<!--                                 <span class="label label-danger">PHP</span> file.php (1.2 MB) -->
+<!--                             </td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">View</a></td> -->
+<!--                             <td width="6%"><a href="javascript:void(0);">Download</a></td> -->
+<!--                         </tr> -->
+<!--                     </tbody> -->
+<!--                 </table> -->
+<!--             </div> -->
             <!--/ attachment -->
-        </div>
+<!--         </div> -->
         <!--/ panel body -->
 
         <!-- reply box -->
@@ -214,7 +132,8 @@
             <i>Click here to <strong>Reply</strong> or <strong>Forward</strong></i>
         </div>
         <!--/ reply box -->
-        <pre>{{ print_r($message, 1)}}</pre>
+        <script type="text/javascript" src="/plugins/summernote/js/summernote.js"></script>
+        <script type="text/javascript" src="/javascript/backend/pages/email.js"></script>
     </div>
     <!--/ content -->
 </div>

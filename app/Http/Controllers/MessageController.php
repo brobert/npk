@@ -110,9 +110,14 @@ class MessageController extends Controller {
      * @param Integer $messageid
      * @return \App\Http\Controllers\Integer[]
      */
-    public function show_message(Request $request, $id)
+    public function view(Request $request, $id)
     {
-        $this->set_data('message', $this->resource->get_message($id));
+        info('Some helpful information!-----------------------------');
+
+        $message = $this->resource->get_message($id);
+        $this->authorize('view', $message);
+
+        $this->set_data('message', $message);
 
         $this->set_view('messages.show_message');
 

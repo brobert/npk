@@ -30,7 +30,7 @@ Route::prefix('messages')
         Route::get('/outbox', 'MessageController@outbox')->name('messages.outbox');
         Route::get('/draft', 'MessageController@draft')->name('messages.draft');
         Route::get('/trash', 'MessageController@deleted')->name('messages.deleted');
-        Route::get('/view/{id}', 'MessageController@show_message')->name('messages.view');
+        Route::get('/view/{id}', 'MessageController@view')->name('messages.view');
     }
 );
 
